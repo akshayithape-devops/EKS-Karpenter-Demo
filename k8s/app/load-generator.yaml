@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ab-test
+spec:
+  containers:
+    - name: ab
+      image: httpd:2.4
+      command: ["/bin/sh"]
+      args:
+        - -c
+        - |
+          ab -n 1000000 -c 2000 http://karpenter-demo/
+  restartPolicy: Never

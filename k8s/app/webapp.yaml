@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: karpenter-demo
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: karpenter-demo
+  template:
+    metadata:
+      labels:
+        app: karpenter-demo
+    spec:
+      # Force pods to on-demand nodes
+      nodeSelector:
+        karpenter.sh/capacity-type: on-demand   
+      containers:
+        - name: app
+          image: public.ecr.aws/docker/library/nginx:latest
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
