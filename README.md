@@ -16,6 +16,7 @@ Karpenter is an open-source, flexible, high-performance Kubernetes cluster autos
 
 ## Project Structure
 
+```
 01_EKS_Karpenter_Demo
 ├── k8s
 │   ├── app
@@ -91,6 +92,7 @@ Karpenter is an open-source, flexible, high-performance Kubernetes cluster autos
         └── variables.tf
 
 11 directories, 62 files
+```
 
 ## Prerequisites
 
