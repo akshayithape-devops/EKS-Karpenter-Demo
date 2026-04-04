@@ -30,13 +30,13 @@ resource "aws_eks_node_group" "private_nodes" {
   # Configure auto-scaling limits and defaults
   scaling_config {
     # Desired number of nodes when the node group is created
-    desired_size = 3
+    desired_size = 1
 
     # Minimum number of nodes allowed
     min_size = 1
 
     # Maximum number of nodes the group can scale to
-    max_size = 6
+    max_size = 2
   }
 
   # Set the max percentage of nodes that can be unavailable during update
