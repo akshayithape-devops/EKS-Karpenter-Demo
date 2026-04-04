@@ -44,4 +44,4 @@ spec:
   # Recommended disruption settings
   disruption:
     consolidationPolicy: WhenEmptyOrUnderutilized
-    consolidateAfter: 5s  # How long to wait before consolidating
+    consolidateAfter: 10s  # How long to wait before consolidating

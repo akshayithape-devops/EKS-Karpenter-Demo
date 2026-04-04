@@ -41,7 +41,7 @@ spec:
     cpu: "50"
   disruption:
     consolidationPolicy: WhenEmptyOrUnderutilized
-    consolidateAfter: 5s
+    consolidateAfter: 10s
     # Add budgets to control disruption rate
     budgets:
       - nodes: "100%"  # Allow all nodes to be disrupted if needed
