@@ -18,78 +18,78 @@ Karpenter is an open-source, flexible, high-performance Kubernetes cluster autos
 
 ```
 01_EKS_Karpenter_Demo
-├── k8s
-│   ├── app
-│   │   ├── load-generator.yaml
-│   │   ├── webapp-hpa.yaml
-│   │   ├── webapp-svc.yaml
-│   │   └── webapp.yaml
-│   └── karpenter
-│       ├── 01_ec2nodeclass.yaml
-│       ├── 02_nodepool_ondemand.yaml
-│       └── 03_nodepool_spot.yaml
-├── README.md
-└── terraform
-    ├── eks
-    │   ├── datasources_and_locals.tf
-    │   ├── ebscsi-eksaddon.tf
-    │   ├── ebscsi-eks-pod-identity-association.tf
-    │   ├── ebscsi-iam-policy-and-role.tf
-    │   ├── eksaddon_metrics_server.tf
-    │   ├── eks_cluster_iamrole.tf
-    │   ├── eks_cluster.tf
-    │   ├── eks_nodegroup_iamrole.tf
-    │   ├── eks_nodegroup_private.tf
-    │   ├── env
-    │   │   ├── dev.tfvars
-    │   │   ├── prod.tfvars
-    │   │   └── staging.tfvars
-    │   ├── externaldns-eksaddon.tf
-    │   ├── externaldns-iam-policy-and-role.tf
-    │   ├── externaldns-pod-identity-association.tf
-    │   ├── helm-and-kubernetes-providers.tf
-    │   ├── lbc-eks-pod-identity-association.tf
-    │   ├── lbc-helm-install.tf
-    │   ├── lbc-iam-policy-and-role.tf
-    │   ├── lbc-iam-policy-datasources.tf
-    │   ├── outputs.tf
-    │   ├── podidentityagent-eksaddon.tf
-    │   ├── podidentity-assumerole.tf
-    │   ├── provider.tf
-    │   ├── remote-state.tf
-    │   ├── secretstorecsi-ascp-helm-install.tf
-    │   ├── secretstorecsi-helm-install.tf
-    │   ├── tags.tf
-    │   ├── terraform.tfvars
-    │   └── variables.tf
-    ├── karpenter
-    │   ├── datasources_and_locals.tf
-    │   ├── eks_remote_state.tf
-    │   ├── helm_and_kubernetes_providers.tf
-    │   ├── karpenter_access_entry.tf
-    │   ├── karpenter_controller_iam_policy.tf
-    │   ├── karpenter_controller_iam_role.tf
-    │   ├── karpenter_eventbridge_rules.tf
-    │   ├── karpenter_helm_install.tf
-    │   ├── karpenter_node_iam_role.tf
-    │   ├── karpenter_pod_identity_association.tf
-    │   ├── karpenter_sqs_queue.tf
-    │   ├── provider.tf
-    │   ├── variables.tf
-    │   └── vpc_remote_state.tf
-    └── vpc
-        ├── main.tf
-        ├── modules
-        │   └── vpc
-        │       ├── datasources-and-locals.tf
-        │       ├── main.tf
-        │       ├── outputs.tf
-        │       ├── README.md
-        │       └── variables.tf
-        ├── outputs.tf
-        ├── provider.tf
-        ├── terraform.tfvars
-        └── variables.tf
+├── 01_terraform
+│   ├── 01_vpc
+│   │   ├── main.tf
+│   │   ├── modules
+│   │   │   └── vpc
+│   │   │       ├── datasources-and-locals.tf
+│   │   │       ├── main.tf
+│   │   │       ├── outputs.tf
+│   │   │       ├── README.md
+│   │   │       └── variables.tf
+│   │   ├── outputs.tf
+│   │   ├── provider.tf
+│   │   ├── terraform.tfvars
+│   │   └── variables.tf
+│   ├── 02_eks
+│   │   ├── datasources_and_locals.tf
+│   │   ├── ebscsi-eksaddon.tf
+│   │   ├── ebscsi-eks-pod-identity-association.tf
+│   │   ├── ebscsi-iam-policy-and-role.tf
+│   │   ├── eksaddon_metrics_server.tf
+│   │   ├── eks_cluster_iamrole.tf
+│   │   ├── eks_cluster.tf
+│   │   ├── eks_nodegroup_iamrole.tf
+│   │   ├── eks_nodegroup_private.tf
+│   │   ├── env
+│   │   │   ├── dev.tfvars
+│   │   │   ├── prod.tfvars
+│   │   │   └── staging.tfvars
+│   │   ├── externaldns-eksaddon.tf
+│   │   ├── externaldns-iam-policy-and-role.tf
+│   │   ├── externaldns-pod-identity-association.tf
+│   │   ├── helm-and-kubernetes-providers.tf
+│   │   ├── lbc-eks-pod-identity-association.tf
+│   │   ├── lbc-helm-install.tf
+│   │   ├── lbc-iam-policy-and-role.tf
+│   │   ├── lbc-iam-policy-datasources.tf
+│   │   ├── outputs.tf
+│   │   ├── podidentityagent-eksaddon.tf
+│   │   ├── podidentity-assumerole.tf
+│   │   ├── provider.tf
+│   │   ├── remote-state.tf
+│   │   ├── secretstorecsi-ascp-helm-install.tf
+│   │   ├── secretstorecsi-helm-install.tf
+│   │   ├── tags.tf
+│   │   ├── terraform.tfvars
+│   │   └── variables.tf
+│   └── 03_karpenter
+│       ├── datasources_and_locals.tf
+│       ├── eks_remote_state.tf
+│       ├── helm_and_kubernetes_providers.tf
+│       ├── karpenter_access_entry.tf
+│       ├── karpenter_controller_iam_policy.tf
+│       ├── karpenter_controller_iam_role.tf
+│       ├── karpenter_eventbridge_rules.tf
+│       ├── karpenter_helm_install.tf
+│       ├── karpenter_node_iam_role.tf
+│       ├── karpenter_pod_identity_association.tf
+│       ├── karpenter_sqs_queue.tf
+│       ├── provider.tf
+│       ├── variables.tf
+│       └── vpc_remote_state.tf
+├── 02_k8s
+│   ├── 01_karpenter
+│   │   ├── 01_ec2nodeclass.yaml
+│   │   ├── 02_nodepool_ondemand.yaml
+│   │   └── 03_nodepool_spot.yaml
+│   └── 02_app
+│       ├── load-generator.yaml
+│       ├── webapp-hpa.yaml
+│       ├── webapp-svc.yaml
+│       └── webapp.yaml
+└── README.md
 
 11 directories, 62 files
 ```
